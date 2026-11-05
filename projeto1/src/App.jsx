@@ -1,26 +1,41 @@
 import { useState } from "react";                             // componente de estado do React, para criar variáveis de estado e atualizar a interface do usuário quando essas variáveis mudarem
 
-export default function App() {                               // export para tornar o componente App disponível para outros arquivos importarem. default para indicar que este é o componente principal do arquivo
+ function App() {                               // export para tornar o componente App disponível para outros arquivos importarem. default para indicar que este é o componente principal do arquivo
   const [mensagem, setMensagem] = useState("");               // declaração de uma variável de estado chamada "mensagem" e uma função "setMensagem" para atualizar essa variável. O valor inicial é uma string vazia ("").
   const [mostraMensagem, setMostraMensagem] = useState("");   // mostraMensagem é outra variável de estado que armazenará a mensagem que será exibida na tela. O valor inicial também é uma string vazia ("").
 
+
   return (                                                    // App retorna um JSX que representa a interface do usuário. O JSX é uma sintaxe que permite escrever HTML dentro do JavaScript, facilitando a criação de componentes React.
     <div>
-      <input
-        type="text"
-        value={mensagem}
-        onChange={(event) => setMensagem(event.target.value)} 
-        placeholder="Escreva uma mensagem"
+      <input type="text"
+      value={mensagem}
+      onChange={(event) => setMensagem(event.target.value)}
+      placeholder="enviar mensagem"
       />
 
-      <button onClick={() => setMostraMensagem(mensagem)}>
-        Enviar
+      <button onClick={() => setMostraMensagem(mensagem)}>enviar
       </button>
+      <h1>{mensagem}</h1>
+    </div>
+    
+  );
+}
 
-      <h1>{mostraMensagem}</h1>
+  function botao() {
+  const [contador, setContador] = useState(0);
+
+  return (
+    <div>
+      <h1>{contador}</h1>
+
+      <button onClick={() => setContador(contador + 1)}>
+        Aumentar
+      </button>
     </div>
   );
 }
+
+export default App;
 
 /* 
 input: 
