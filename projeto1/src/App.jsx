@@ -15,13 +15,14 @@ import { useState } from "react";                             // componente de e
 
       <button onClick={() => setMostraMensagem(mensagem)}>enviar
       </button>
-      <h1>{mensagem}</h1>
+      <h1>{mostraMensagem}</h1>
+      <Botao />
     </div>
     
   );
 }
 
-  function botao() {
+  function Botao() {
   const [contador, setContador] = useState(0);
 
   return (
@@ -34,6 +35,22 @@ import { useState } from "react";                             // componente de e
     </div>
   );
 }
+
+  function Frase() {
+    const [frase, setfrase] = useState("");
+
+    frase = "Hello word";
+
+    return (
+      <div>
+        
+        <button onClick={() => setfrase(frase)}>
+          frase
+        </button>
+
+      </div>
+    );
+  }
 
 export default App;
 
