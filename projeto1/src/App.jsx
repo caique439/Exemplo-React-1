@@ -22,7 +22,7 @@ import { useState } from "react";                             // componente de e
   );
 }
 
-  function Botao() {
+  export function Botao() {
   const [contador, setContador] = useState(0);
 
   return (
@@ -32,19 +32,22 @@ import { useState } from "react";                             // componente de e
       <button onClick={() => setContador(contador + 1)}>
         Aumentar
       </button>
+      <Frase />
     </div>
+
+    
   );
 }
 
-  function Frase() {
+  export function Frase() {
     const [frase, setfrase] = useState("");
 
-    frase = "Hello word";
+    
 
     return (
       <div>
-        
-        <button onClick={() => setfrase(frase)}>
+        {frase}
+        <button onClick={() => setfrase("Hello word")}>
           frase
         </button>
 
